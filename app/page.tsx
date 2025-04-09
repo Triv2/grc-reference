@@ -1,103 +1,68 @@
-import Image from "next/image";
+import { Shield, AlertTriangle, CheckCircle } from "lucide-react"
+import PageHeader from "@/components/page-header"
+import SectionCard from "@/components/section-card"
+import ContentSection from "@/components/content-section"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="container py-6 md:py-10">
+      <PageHeader
+        title="Governance, Risk, and Compliance"
+        description="Welcome to the GRC Information Portal. Explore comprehensive resources on Governance, Risk Management, and Compliance practices."
+      />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <ContentSection title="Overview of GRC">
+        <div className="space-y-4">
+          <p>
+            Governance, Risk, and Compliance (GRC) is an integrated approach to organization-wide governance, risk, and
+            compliance that ensures an organization acts ethically correct and in accordance with its risk appetite,
+            internal policies, and external regulations.
+          </p>
+          <p>
+            A well-designed GRC framework helps organizations align IT with business goals, manage risks effectively,
+            and meet compliance requirements efficiently.
+          </p>
+          <p>
+            The three pillars of GRC work together to provide a comprehensive approach to managing an organization's
+            operations:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>
+              <strong>Governance</strong> establishes policies, procedures, and controls to ensure proper management and
+              oversight.
+            </li>
+            <li>
+              <strong>Risk Management</strong> identifies, assesses, and mitigates risks that could impact business
+              objectives.
+            </li>
+            <li>
+              <strong>Compliance</strong> ensures adherence to laws, regulations, standards, and internal policies.
+            </li>
+          </ul>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </ContentSection>
+
+      <h2 className="text-2xl font-bold mb-6">Explore GRC Components</h2>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <SectionCard
+          title="Governance"
+          description="Explore how organizations establish policies, procedures, and controls to ensure proper management and oversight."
+          href="/governance"
+          icon={Shield}
+        />
+        <SectionCard
+          title="Risk"
+          description="Learn about identifying, assessing, and mitigating risks that could impact business objectives."
+          href="/risk"
+          icon={AlertTriangle}
+        />
+        <SectionCard
+          title="Compliance"
+          description="Understand how organizations ensure adherence to laws, regulations, standards, and internal policies."
+          href="/compliance"
+          icon={CheckCircle}
+        />
+      </div>
     </div>
-  );
+  )
 }
